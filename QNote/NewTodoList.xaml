@@ -1,0 +1,90 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QNote"
+        xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="QNote.NewTodoList"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Title="QNote" Height="550" Width="500" WindowStartupLocation="CenterScreen">
+    <Window.Clip>
+        <RectangleGeometry Rect="0,0,500,550" RadiusX="25" RadiusY="25"/>
+    </Window.Clip>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="90" />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="110" />
+            <ColumnDefinition Width="70" />
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Text="Add-Todo" 
+                   Grid.Column="1"
+                   FontSize="20"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"/>
+        
+        <Button x:Name="CloseTapButton" 
+                Grid.Column="3"
+                Click="CloseTapButton_Click"
+                Content="Close" />
+
+        <TextBlock Text="Title" 
+                   FontSize="15"
+                   FontWeight="Bold"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+
+        <TextBox x:Name="Title"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 VerticalAlignment="Center"/>
+
+
+
+        <TextBlock Text="Date" 
+                   FontSize="15"
+                   FontWeight="Bold"
+                   Grid.Row="1"
+                   Grid.Column="2"/>
+        
+        <hc:DatePicker 
+            x:Name="DatePickerBox"
+            Grid.Column="2" 
+            HorizontalAlignment="Right" 
+            Grid.Row="1" 
+            VerticalAlignment="Center"/>
+
+        <RichTextBox 
+            x:Name="DescrptionBox"
+            Grid.Column="1" 
+            Grid.Row="2" />
+
+        <Button x:Name="SaveButton"
+                Content="Save"
+                Click="SaveButton_Click"
+                Grid.Column="1"
+                Grid.Row="3"
+                Width="250"
+                Foreground="White"
+                FontFamily="Roboto"
+                FontWeight="Bold"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center" Background="#FF3F3FF6"/>
+
+
+
+    </Grid>
+</Window>
